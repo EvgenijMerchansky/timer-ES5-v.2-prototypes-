@@ -1,0 +1,35 @@
+body{
+  margin: 0;
+}
+
+#arrow1{
+  background-color: green;
+  width: 2px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 20px;
+  transform-origin: center 180px;
+  /*transform: rotate(45deg);*/
+}
+
+#arrow2{
+  background-color: blue;
+  width: 6px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 20px;
+  margin-top: -150px;
+  transform-origin: center 180px;
+}
+
+#btn{
+  margin-top: 30px;
+}
+
+.wrapper{
+  background-color: #eee;
+  padding: 50px;
+  width: auto;
+  height: 380px;
+  text-align: center;
+}
