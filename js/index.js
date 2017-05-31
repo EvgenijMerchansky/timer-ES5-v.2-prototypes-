@@ -14,20 +14,21 @@ function Arrow2(){
 Arrow1.prototype = new GeneraTimer();
 Arrow2.prototype = new GeneraTimer();
   // * instances
-var arrow1 = new Arrow1();
-var arrow2 = new Arrow2();
+var arrow1 = new Arrow1(),
+    arrow2 = new Arrow2();
   // * starter
-var start = document.getElementById('btn').addEventListener('click', function(){
-  starting(arrow1.start = true);
-})
+var start = document.getElementById('btn').addEventListener('click', starting);
 
-function starting(starter) {
+function starting() {
+  arrow1.start = true;
 
-  if(starter == true){
+  if(arrow1.start == true){
+    // * Caching variable
+    var doc = document;
 
     var int = setInterval(function() {
-      var elem1 = document.getElementById('arrow1');
-      var elem2 = document.getElementById('arrow2');
+      var elem1 = doc.getElementById('arrow1'),
+          elem2 = doc.getElementById('arrow2');
         // * incrementing arrows individual timer
       Math.floor(arrow1.currentTime++/20);
       Math.floor(arrow2.currentTime++/10/60);
@@ -39,8 +40,8 @@ function starting(starter) {
         arrow1.currentTime = 0;
       }
     },100);
-      // * stopper
-    var pause = document.getElementById('pause-btn').addEventListener('click', function() {
+      // * pause
+    var pause = doc.getElementById('pause-btn').addEventListener('click', function() {
       alert('Прошло ' + Math.floor(arrow2.currentTime++/10/60) + ' минут и ' + Math.floor(arrow1.currentTime++/20) + ' секунд(ы).');
       clearInterval(int);
     })
